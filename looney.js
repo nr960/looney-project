@@ -1,10 +1,10 @@
 const characters = [
-    {name: "Bugs", first_appearance: new Date ('1940-07-27'), creator: ["Tex Avery", "Chuck Jones", "Bob Givens", "Robert McKimson"]},
-    {name: "Sylvester", first_appearance: new Date ('1945-03-24'), creator: ["Friz Freleng"]},
-    {name: "Tweety", first_appearance: new Date ('1944-08-19'), creator: ["Bob Clampett"]},
-    {name: "Roadrunner", first_appearance: new Date ('1949-09-17'), creator: ["Chuck Jones", "Michael Maltese"]},
-    {name: "Taz", first_appearance: new Date ('1954-06-19'), creator: ["Robert McKimson"]},
-    {name: "Elmer", first_appearance: new Date ('1940-03-02'), creator: ["Tex Avery", "Chuck Jones"]},
+    {name: "Bugs", first_appearance: new Date ('1940-07-27'), creator: ["Tex Avery", "Chuck Jones", "Bob Givens", "Robert McKimson"], role: ["Protagonist"]},
+    {name: "Sylvester", first_appearance: new Date ('1945-03-24'), creator: ["Friz Freleng"], role: ["Antagonist"]},
+    {name: "Tweety", first_appearance: new Date ('1944-08-19'), creator: ["Bob Clampett"], role: ["Protagonist"]},
+    {name: "Roadrunner", first_appearance: new Date ('1949-09-17'), creator: ["Chuck Jones", "Michael Maltese"], role: ["Neutral"]},
+    {name: "Taz", first_appearance: new Date ('1954-06-19'), creator: ["Robert McKimson"], role: ["Antagonist"]},
+    {name: "Elmer", first_appearance: new Date ('1940-03-02'), creator: ["Tex Avery", "Chuck Jones"], role: ["Antagonist"]},
   ];
   
   const characterCards = document.querySelectorAll('.col-sm-4');
@@ -87,6 +87,37 @@ const characters = [
                       document.querySelector('.row').appendChild(card);
                   }
               });
+          }
+      });
+  });
+
+  function filterByRole(charRole){
+   
+    characterCards.forEach(card => {
+      const name = card.querySelector('.card').getAttribute('data-name');
+      const character = characters.find(chr => chr.name === name);
+      
+        if (character  && character.role.includes(charRole)){
+          card.style.display = '';
+          //make row the card's parent element
+          if(!card.parentElement){
+            document.querySelector('.row').appendChild(card);
+          }
+          } else {
+            card.style.display = 'none';
+            if(card.parentElement){
+              card.remove();
+            }
+          }
+        });
+    }
+    
+    document.querySelectorAll('.dropdown-role').forEach(role => {
+      role.addEventListener('click', function(event) {
+          event.preventDefault();
+          const selectedRole = this.getAttribute('data-value');
+          if (selectedRole) {
+              filterByRole(selectedRole);
           }
       });
   });

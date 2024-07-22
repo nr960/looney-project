@@ -17,6 +17,7 @@ body{
     background-color: white;
     margin: 1%;
     font-weight: bold;
+    width: 100px;
   }
   
   .card{
