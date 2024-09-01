@@ -1,14 +1,11 @@
-<html>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-  <!--link stylesheet after the imported libraries-->
-  <link rel="stylesheet" href="looney.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -16,144 +13,412 @@
 <!--dropdowns-->
 <center>
 <div class="dropdown mt-3">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="year-dropdown" data-bs-toggle="dropdown">Debut</button>
-    <ul class="dropdown-menu" aria-labelledby="year-dropdown">
-      <li><a class="dropdown-decade" href="#" data-value="All">All Decades</a></li>
-      <!--<li><a class="dropdown-decade" href="#" data-value="1930">1930s</a></li>-->
-      <li><a class="dropdown-decade" href="#" data-value="1940">1940s</a></li>
-      <li><a class="dropdown-decade" href="#" data-value="1950">1950s</a></li>
+<button class="btn btn-secondary dropdown-toggle" type="button" id="year-dropdown" data-bs-toggle="dropdown">Debut</button>
+  <ul class="dropdown-menu" aria-labelledby="year-dropdown">
+    <li><a class="dropdown-decade" href="#" data-value="All">All Decades</a></li>
+    <!--<li><a class="dropdown-decade" href="#" data-value="1930">1930s</a></li>-->
+    <li><a class="dropdown-decade" href="#" data-value="1930">1930s</a></li>
+    <li><a class="dropdown-decade" href="#" data-value="1940">1940s</a></li>
+    <li><a class="dropdown-decade" href="#" data-value="1950">1950s</a></li>
+  </ul>
+<button class="btn btn-secondary dropdown-toggle" type="button" id="creator-dropdown" data-bs-toggle="dropdown">Creator</button>
+  <ul class="dropdown-menu" aria-labelledby="creator-dropdown">
+        <li><a class="dropdown-creator" href="#" data-value="Any">Any Creator</a></li>
+        <li><a class="dropdown-creator" href="#" data-value="Tex Avery">Tex Avery</a></li>
+        <li><a class="dropdown-creator" href="#" data-value="Bob Clampett">Bob Clampett</a></li>
+        <li><a class="dropdown-creator" href="#" data-value="Chuck Jones">Chuck Jones</a></li>
+        <li><a class="dropdown-creator" href="#" data-value="Friz Freleng">Friz Freleng</a></li>
+        <li><a class="dropdown-creator" href="#" data-value="Robert McKimson">Robert McKimson</a></li>
+  </ul>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="role-dropdown" data-bs-toggle="dropdown">Role</button>
+    <ul class="dropdown-menu" aria-labelledby="role-dropdown">
+      <li><a class="dropdown-role" href="#" data-value="Protagonist">Protagonist</a></li>
+      <li><a class="dropdown-role" href="#" data-value="Antagonist">Antagonist</a></li>
+      <li><a class="dropdown-role" href="#" data-value="Neutral">Neutral</a></li>
     </ul>
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="creator-dropdown" data-bs-toggle="dropdown">Creator</button>
-    <ul class="dropdown-menu" aria-labelledby="creator-dropdown">
-          <li><a class="dropdown-creator" href="#" data-value="Any">Any Creator</a></li>
-          <li><a class="dropdown-creator" href="#" data-value="Tex Avery">Tex Avery</a></li>
-          <li><a class="dropdown-creator" href="#" data-value="Bob Clampett">Bob Clampett</a></li>
-          <li><a class="dropdown-creator" href="#" data-value="Chuck Jones">Chuck Jones</a></li>
-          <li><a class="dropdown-creator" href="#" data-value="Friz Freleng">Friz Freleng</a></li>
-          <li><a class="dropdown-creator" href="#" data-value="Robert McKimson">Robert McKimson</a></li>
-    </ul>
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="role-dropdown" data-bs-toggle="dropdown">Role</button>
-      <ul class="dropdown-menu" aria-labelledby="role-dropdown">
-        <li><a class="dropdown-role" href="#" data-value="Protagonist">Protagonist</a></li>
-        <li><a class="dropdown-role" href="#" data-value="Antagonist">Antagonist</a></li>
-        <li><a class="dropdown-role" href="#" data-value="Neutral">Neutral</a></li>
-      </ul>
 </div>
 
 </center>
 <br>
 <!--character cards-->
 <div class="row">
-  <div class="col-sm-4">
-  <div class="card" data-name="Bugs">
-      <img src="https://pyramidinternational.com/cdn/shop/products/wdc98012.jpg?v=1702068669" class="card-img-top" alt="daffy">
-      <div class="card-body">
-          <h5 class="card-title">Bugs Bunny</h5>
+
+<!--Bugs-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Bugs">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://nr960.neocities.org/wdc98012.png" class="card-img-top" alt="bugs">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Bugs Bunny</h5>
+          <hr>
           <p class="card-text">
-            <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>July 27, 1940</td>
-                <tr>
-                  <td>Creator(s):</td> <td>Tex Avery<br> Chuck Jones <br>Bob Givens<br>Robert McKimson</td>
-              </tr>
-        </table>
-          </p>
-      </div>
-  </div>
+            <tr>
+            <td>Debut:</td><td>July 27, 1940</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Tex Avery, Chuck Jones, Bob Givens, Robert McKimson</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+    <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-success">Protagonist</span>
+    </div>
 </div>
-<div class="col-sm-4">
-  <div class="card" data-name="Sylvester">
-      <img src="https://m.media-amazon.com/images/I/41SwlnUahwL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="tweety">
-      <div class="card-body">
-          <h5 class="card-title">Sylvester</h5>
+</div>
+
+<!--Daffy-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Daffy">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://pyramidinternational.com/cdn/shop/files/wdc98013_720x.jpg?v=1723758341" class="card-img-top" alt="daffy">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Daffy Duck</h5>
+          <hr>
           <p class="card-text">
-            <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>March 24, 1945</td>
-                <tr>
-                  <td>Creator(s):</td> <td>Friz Freleng</td>
-              </tr>
-        </table>
-          </p>
+            <tr>
+            <td>Debut:</td><td>April 17, 1937</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Tex Avery, Bob Clampett</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+    <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-success">Protagonist</span>
+        <span class="badge badge-pill bg-danger">Antagonist</span>
       </div>
-  </div>
 </div>
-  <div class="col-sm-4">
-  <div class="card" data-name="Tweety">
-      <img src="https://m.media-amazon.com/images/I/51OdP5UksIL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="tweety">
-      <div class="card-body">
-          <h5 class="card-title">Tweety</h5>
+</div>
+
+<!--Sylvester-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Sylvester">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://m.media-amazon.com/images/I/41SwlnUahwL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="sylvester">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Sylvester</h5>
+          <hr>
           <p class="card-text">
-            <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>August 19, 1944</td>
-                <tr>
-                  <td>Creator(s):</td> <td>Bob Clampett</td>
-              </tr>
-        </table>
-          </p>
+            <tr>
+            <td>Debut:</td><td>March 24, 1945</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Friz Freleng</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-danger">Antagonist</span>
       </div>
-  </div>
 </div>
-    <div class="col-sm-4">
-  <div class="card" data-name="Roadrunner">
-      <img src="https://m.media-amazon.com/images/I/41nx+zV8y3L._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="rosdruner">
-      <div class="card-body">
-          <h5 class="card-title">Roadrunner</h5>
+</div>
+
+<!--Tweety-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Tweety">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://m.media-amazon.com/images/I/51OdP5UksIL._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="tweety">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Tweety</h5>
+          <hr>
           <p class="card-text">
-            <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>September 17, 1949</td>
-                <tr>
-                  <td>Creator(s):</td> <td>Chuck Jones <br> Michael Maltese</td>
-              </tr>
-        </table>
-          </p>
+            <tr>
+            <td>Debut:</td><td>August 19, 1944</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Bob Clampett</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-success">Protagonist</span>
       </div>
-  </div>
 </div>
-    <div class="col-sm-4">
-  <div class="card" data-name="Taz">
-      <img src="https://m.media-amazon.com/images/I/51cwZQjNA4L._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="taz">
-      <div class="card-body">
-          <h5 class="card-title">Tasmanian Devil</h5>
+</div>
+
+<!--Wile-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Wile">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://pyramidinternational.com/cdn/shop/files/wdc95132_720x.jpg?v=1723585400" class="card-img-top" alt="wile">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Wile E. Coyote</h5>
+          <hr>
           <p class="card-text">
-            <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>June 19, 1954</td>
-                <tr>
-                  <td>Creator(s):</td> <td>Robert McKimson </td>
-              </tr>
-        </table>
-          </p>
+            <tr>
+            <td>Debut:</td><td>September 17, 1949</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Chuck Jones, Michael Maltese</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-secondary">Neutral</span>
+        <span class="badge badge-pill bg-danger">Antagonist</span>
       </div>
-  </div>
 </div>
-    <div class="col-sm-4">
-  <div class="card" data-name="Elmer">
-      <img src="https://m.media-amazon.com/images/I/51yb7vR9Q-L.jpg" class="card-img-top" alt="elmer">
-      <div class="card-body">
-          <h5 class="card-title">Elmer Fudd</h5>
+</div>
+
+<!--Roadrunner-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Roadrunner">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://m.media-amazon.com/images/I/41nx+zV8y3L._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="roadrunner">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Roadrunner</h5>
+          <hr>
           <p class="card-text">
-        <p>⸺</p>
             <table>
-              <tr>
-                <td>Debut:</td><td>March 2, 1940</td>
-                <tr>
-                  <td>Creator(s):</td><td>Tex Avery<br>Chuck Jones</td>
-              </tr>
-        </table>
-          </p>
+            <tr>
+            <td>Debut:</td><td>September 17, 1949</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Chuck Jones, Michael Maltese</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-secondary">Neutral</span>
       </div>
-  </div>
 </div>
+</div>
+
+<!--Elmer-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Elmer">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://m.media-amazon.com/images/I/51yb7vR9Q-L.jpg" class="card-img-top" alt="elmer">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Elmer Fudd</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>March 2, 1940</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Tex Avery, Chuck Jones</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-danger">Antagonist</span>
+      </div>
+</div>
+</div>
+
+<!--Yosemite-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Yosemite">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://pyramidinternational.com/cdn/shop/files/wdc98021_720x.jpg?v=1723237260" class="card-img-top" alt="yosemite">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Yosemite Sam</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>May 5, 1945</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Friz Freleng</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-danger">Antagonist</span>
+      </div>
+</div>
+</div>
+
+<!--Marvin-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Marvin">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://pyramidinternational.com/cdn/shop/files/wdc95123_720x.jpg?v=1723757177" class="card-img-top" alt="marvin">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Marvin the Martian</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>July 24, 1948</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Chuck Jones</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-danger">Antagonist</span>
+      </div>
+</div>
+</div>
+
+<!--Foghorn-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Foghorn">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://nr960.neocities.org/pick-any-cartoon-character-that-would-challenge-foghorn-v0-9dhb894nrdxc1.png" class="card-img-top" alt="foghorn">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Foghorn Leghorn</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>August 31, 1946</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Robert McKimson</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-secondary">Neutral</span>
+      </div>
+</div>
+</div>
+
+<!--Taz-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Taz">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://m.media-amazon.com/images/I/51cwZQjNA4L._AC_UF894,1000_QL80_.jpg" class="card-img-top" alt="taz">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Tasmanian Devil</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>June 19, 1954</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Robert McKimson</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-danger">Antagonist</span>
+      </div>
+</div>
+</div>
+
+<!--Speedy-->
+<div class="col-sm-4" id="my_character">
+<div class="card h-100 d-flex flex-column" data-name="Speedy">
+    <div class="card-body">
+    <div class="row">
+    <div class="col-sm-4 d-flex align-items-center">
+    <img src="https://pyramidinternational.com/cdn/shop/files/wdc95130_720x.jpg?v=1723757566" class="card-img-top" alt="speedy">
+    </div>
+    <div class="col-sm-8">
+          <hr>
+            <h5 class="card-title">Speedy Gonzales</h5>
+          <hr>
+          <p class="card-text">
+            <table>
+            <tr>
+            <td>Debut:</td><td>September 17, 1955</td>
+            </tr>
+            <tr>
+            <td>Creator(s):</td> <td>Robert McKimson</td>
+            </tr>
+          </table>
+        </p>
+        </div>
+        </div>
+    </div>
+      <div class="card-footer mt-auto">
+        <span class="badge badge-pill bg-success">Protagonist</span>
+      </div>
+</div>
+</div>
+
+<!--row closing tag-->
 </div>
 </body>
 <!--Most likely, the problem is that you are including your js file in a head tag or somewhere above your main content. By doing this, you are executing your js code before full html content has been attached. As a result, when your js code executes, it does not recognize any html element because there isn’t any. Try including them at the end of your html content or use onload functionality.-->
 <script src="looney.js"></script>
-</html>
